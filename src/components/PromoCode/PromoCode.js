@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import { Button, Collapse, Form, Row, Col } from "react-bootstrap";
+import { connect } from "react-redux";
+import { handleChange } from "../../actions/promoCodeActions";
 
 export class PromoCode extends Component {
   state = {
-    open: false,
-    value: ""
+    open: false
   };
 
-  handleChange() {
-    console.log("changed");
-  }
+  handleChange = e => {
+    this.props.handleChange(e);
+  };
 
   render() {
     return (
@@ -40,6 +41,7 @@ export class PromoCode extends Component {
                   block
                   disabled={this.props.isDisabled}
                   onClick={this.props.giveDiscount}
+                  className={this.props.isDisabled === true ? "disabled" : ""}
                 >
                   Apply
                 </Button>
@@ -47,9 +49,24 @@ export class PromoCode extends Component {
             </Col>
           </Row>
         </Collapse>
+        <Row>
+          <Col md={12}>
+            <Button
+              variant="warning"
+              block
+              onClick={e => this.props.checkoutAlert(e)}
+            >
+              Checkout
+            </Button>
+          </Col>
+        </Row>
       </div>
     );
   }
 }
 
-export default PromoCode;
+const mapStateToProps = state => ({
+  promoCode: state.promoCode.value
+});
+
+export default connect(mapStateToProps, { handleChange })(PromoCode);

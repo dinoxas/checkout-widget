@@ -14,7 +14,7 @@ export class ItemDetails extends Component {
           onClick={() => this.setState({ open: !this.state.open })}
         >
           {this.state.open === false ? `See ` : `Hide `} item details
-          {this.state.open === false ? `+` : `-`}
+          {this.state.open === false ? ` +` : ` -`}
         </Button>
         <Collapse in={this.state.open}>
           <div>

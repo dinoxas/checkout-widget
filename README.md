@@ -1,8 +1,10 @@
 # Checkout widget using React and Redux
 
-Simple React app that displays information about movies and TV series.
+Simple React app that allows the user to apply discount/promo code to product.
 
-[Demo](https://dinoxas-movies.netlify.com/)
+Simply type "DISCOUNT" (case sensitive) into the promo code field.
+
+[Demo](https://dinoxas-promocode.netlify.com)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 

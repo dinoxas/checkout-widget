@@ -6,16 +6,10 @@ const styles = {
     textDecoration: "underline"
   },
   totalSavings: {
-    color: "#ff0000",
+    color: "#dc3545",
     fontWeight: "bold"
   }
 };
-
-// function renderTooltip() {
-//   return (
-
-//   );
-// }
 
 export class PickupSavings extends Component {
   render() {
